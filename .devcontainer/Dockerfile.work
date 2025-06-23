@@ -9,6 +9,8 @@ RUN apt-get update && \
     apt-get install -y git
 
 
+WORKDIR /workspace
+
 # その他便利ツールのインストール
 # RUN apt-get -y install --reinstall ca-certificates && \
 #     apt-get -y install software-properties-common && \
@@ -16,5 +18,7 @@ RUN apt-get update && \
 #     apt-get install -y graphviz xdg-utils && \
 #     apt-get install iputils-ping net-tools
 
-COPY pyproject.toml ./
-RUN uv sync --verbose
+# COPY pyproject.toml ./
+# # RUN uv sync --verbose
+
+# ENTRYPOINT ["sh", "-c", "uv sync && uv venv && sleep infinity"]

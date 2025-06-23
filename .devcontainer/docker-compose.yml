@@ -11,4 +11,4 @@ services:
       UV_LINK_MODE: copy
     volumes:
       - ..:/workspace
-    command: sleep infinity
+    command: sh -c "uv sync --verbose && uv venv && sleep infinity"
