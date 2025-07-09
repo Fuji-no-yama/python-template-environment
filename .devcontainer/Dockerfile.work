@@ -17,8 +17,3 @@ WORKDIR /workspace
 #     apt-get install -y sudo wget vim curl gawk make gcc && \
 #     apt-get install -y graphviz xdg-utils && \
 #     apt-get install iputils-ping net-tools
-
-# COPY pyproject.toml ./
-# # RUN uv sync --verbose
-
-# ENTRYPOINT ["sh", "-c", "uv sync && uv venv && sleep infinity"]

@@ -7,8 +7,8 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile.work
     environment:
-      PYTHONPATH: /workspace
+      PYTHONPATH: /workspace/code
       UV_LINK_MODE: copy
     volumes:
       - ..:/workspace
-    command: sh -c "uv sync --verbose && uv venv && sleep infinity"
+    command: sleep infinity

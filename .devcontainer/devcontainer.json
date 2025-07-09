@@ -15,12 +15,13 @@
             ],
             "settings": {
                 "workbench.colorCustomizations": {
-                    // "titleBar.activeBackground": "#061c37",
                     "titleBar.activeForeground": "#ffffff",
                     "activityBar.background": "#32820573",
                     "activityBar.foreground": "#ffffff"
-                }
+                },
+                "python.defaultInterpreterPath": "/workspace/.venv/bin/python"
             }
         }
-    }
+    },
+    "postCreateCommand": "uv venv && uv sync"
 }
