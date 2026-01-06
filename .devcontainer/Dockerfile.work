@@ -1,8 +1,9 @@
 FROM python:3.10
 USER root
 
-# uvのインストール
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+# uvとtyのインストール
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin
+# COPY --from=ghcr.io/astral-sh/ty:latest /ty /bin  # 現時点で動かないためコメントアウト
 
 RUN apt-get update && \
     pip install --upgrade pip && \
