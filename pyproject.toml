@@ -4,6 +4,9 @@ requires-python = ">=3.10"
 version = "0.1.0"
 dependencies = []
 
+[dependency-groups]
+dev = ["ruff"]
+
 [tool.ruff]
 select = ["ALL"]
 ignore = ["D", "S", "PTH", "RET", "ASYNC", "T201", "RUF"]
