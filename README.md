@@ -6,7 +6,7 @@
 
 - Python 3.10 ベースの Dev Container
 - `uv` による仮想環境作成と依存同期
-- `ruff` による lint / format 設定
+- `uv` 管理の `ruff` による lint / format 設定
 - VS Code 設定（保存時フォーマット、import 整理）
 - `astral-sh.ty` 拡張による Language Server 利用
 
@@ -45,6 +45,7 @@ uv run ruff format .
 
 - Language Server は `astral-sh.ty` の VS Code 拡張で提供する想定です。
 - そのため、コンテナ内に `ty` バイナリを別途インストールしない構成になっています。
+- `ruff` 本体は VS Code 拡張ではなく `uv` の開発依存（`[dependency-groups].dev`）で管理します。
 
 ## テンプレート利用時の初期変更
 
