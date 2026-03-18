@@ -2,6 +2,9 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "workspace",
     "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localEnv:HOME}/.codex,target=/root/.codex,type=bind,consistency=cached"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [

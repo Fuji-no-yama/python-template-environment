@@ -5,7 +5,7 @@ version = "0.1.0"
 dependencies = []
 
 [dependency-groups]
-dev = ["ruff"]
+dev = ["ruff", "ty"]
 
 [tool.ruff]
 line-length = 150

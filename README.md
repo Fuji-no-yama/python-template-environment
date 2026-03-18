@@ -7,6 +7,7 @@
 - Python 3.10 ベースの Dev Container
 - `uv` による仮想環境作成と依存同期
 - `uv` 管理の `ruff` による lint / format 設定
+- コンテナ内で使える `codex` CLI
 - VS Code 設定（保存時フォーマット、import 整理）
 - `astral-sh.ty` 拡張による Language Server 利用
 
@@ -19,6 +20,9 @@
 3. 初回起動時に `postCreateCommand` で以下が実行される
    - `uv venv --clear`
    - `uv sync`
+4. `codex` を使う場合は、必要に応じてコンテナ内で認証する
+   - `codex login`
+   - または `OPENAI_API_KEY` を環境変数に設定する
 
 ### ローカルで使う
 
@@ -40,6 +44,19 @@ uv run ruff check --fix .
 # format
 uv run ruff format .
 ```
+
+## Codex CLI
+
+このテンプレートでは、Dev Container のイメージビルド時に `codex` CLI をインストールします。
+
+```bash
+codex --version
+codex login
+codex
+```
+
+- ホストの `~/.codex` はコンテナの `/root/.codex` にマウントされるため、認証情報や設定を共有できます。
+- API キーを使う場合は、`OPENAI_API_KEY` をコンテナ内の環境変数に設定してください。
 
 ## 補足（Language Server）
 
