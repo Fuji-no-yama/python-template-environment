@@ -4,7 +4,7 @@
 
 ## 含まれるもの
 
-- Python 3.10 ベースの Dev Container
+- Python 3.13 ベースの Dev Container
 - `uv` による仮想環境作成と依存同期
 - `uv` 管理の `ruff` による lint / format 設定
 - コンテナ内で使える `codex` CLI
@@ -82,5 +82,5 @@ codex
 ├── .vscode/
 │   └── settings.json
 ├── pyproject.toml
-└── ReadMe.md
+└── README.md
 ```
