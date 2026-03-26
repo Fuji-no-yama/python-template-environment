@@ -11,6 +11,7 @@ RUN apt-get update && \
     pip install --upgrade pip && \
     apt-get install -y git && \
     npm install -g @openai/codex && \
+    npm install -g @anthropic-ai/claude-code && \
     npm cache clean --force
 
 

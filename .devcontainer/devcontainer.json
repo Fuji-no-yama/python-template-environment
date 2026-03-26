@@ -2,9 +2,6 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "workspace",
     "workspaceFolder": "/workspace",
-    "mounts": [
-        "source=${localEnv:HOME}/.codex,target=/root/.codex,type=bind,consistency=cached"
-    ],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -27,5 +24,5 @@
             }
         }
     },
-    "postCreateCommand": "uv venv --clear && uv sync"
+    "postCreateCommand": "uv venv --clear && uv sync && python3 -c \"import json; d=json.load(open('/root/.claude.json.host')); d['installMethod']='npm'; json.dump(d, open('/root/.claude.json','w'))\""
 }
