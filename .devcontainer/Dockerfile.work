@@ -9,10 +9,10 @@ COPY --from=node:20-bookworm /usr/local/ /usr/local/
 
 RUN apt-get update && \
     pip install --upgrade pip && \
-    apt-get install -y git && \
+    apt-get install -y git curl && \
     npm install -g @openai/codex && \
-    npm install -g @anthropic-ai/claude-code && \
-    npm cache clean --force
+    npm cache clean --force && \
+    curl -fsSL https://claude.ai/install.sh | bash
 
 
 WORKDIR /workspace
