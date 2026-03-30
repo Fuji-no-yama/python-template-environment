@@ -7,7 +7,8 @@
 - Python 3.13 ベースの Dev Container
 - `uv` による仮想環境作成と依存同期
 - `uv` 管理の `ruff` による lint / format 設定
-- コンテナ内で使える `codex` CLI
+- コンテナ内で使える `codex` CLI（npm 経由）
+- コンテナ内で使える `claude` CLI（公式インストールスクリプト経由）
 - VS Code 設定（保存時フォーマット、import 整理）
 - `astral-sh.ty` 拡張による Language Server 利用
 
@@ -17,9 +18,10 @@
 
 1. VS Code でこのフォルダを開く
 2. `Dev Containers: Reopen in Container` を実行
-3. 初回起動時に `postCreateCommand` で以下が実行される
-   - `uv venv --clear`
-   - `uv sync`
+3. 初回起動時に `.devcontainer/postCreate.sh` で以下が実行される
+   - `.venv` を削除して `uv sync` で再作成
+   - `claude` CLI のパスを `/root/.bashrc` に追加
+   - ホストの `~/.claude.json` を引き継ぎ `installMethod` を上書き
 4. `codex` を使う場合は、必要に応じてコンテナ内で認証する
    - `codex login`
    - または `OPENAI_API_KEY` を環境変数に設定する
@@ -78,7 +80,8 @@ codex
 ├── .devcontainer/
 │   ├── devcontainer.json
 │   ├── docker-compose.yml
-│   └── Dockerfile.work
+│   ├── Dockerfile.work
+│   └── postCreate.sh
 ├── .vscode/
 │   └── settings.json
 ├── pyproject.toml
