@@ -25,5 +25,5 @@
         }
     },
     "initializeCommand": "mkdir -p ~/.codex ~/.claude && touch ~/.claude.json",
-    "postCreateCommand": "uv venv --clear && uv sync && python3 -c \"import json; c=open('/root/.claude.json.host').read(); d=json.loads(c) if c.strip() else {}; d['installMethod']='native'; json.dump(d, open('/root/.claude.json','w'))\""
+    "postCreateCommand": "bash .devcontainer/postCreate.sh"
 }
